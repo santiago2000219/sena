@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>challenge sprites</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: #17a053;
+            border: 10px solid #fff;
+            margin: 0;
+            height : 97vh;
+       
+        }
+        main {
+            border: 2px solid white;
+            margin: 0 auto;
+            width: 80%;
+            
+
+        }
+        
+        main header div.logo {
+          background: url(images/spriteweb.png) -20px -400px;
+          height: 180px;
+          margin: 0px auto;
+          width: 180px;
+        }
+        
+        main header div.menu ul {
+        
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            width: 80%
+
+        }
+        main header div.menu ul li {
+            background-color: #00000066;
+            border-bottom: 4px solid #fff;
+            color: #fff;
+            font-family: Verdana;
+            display: inline-block;
+            margin-top: 4px;
+            padding: 16px 20px;
+            text-transform: uppercase;
+            text-align: center;
+            transition: 1s background-color all ease-in,
+                        0.5s 0.5s border-bottom ease-out;
+            width: 120px;
+                        
+           
+        }
+        /*para que cuando pulse con el cursor las opciones aparezca de colores*/
+        main header div.menu ul li:hover {
+          background-color: #000000bb; 
+          border-bottom: 4px solid #fad000;
+          cursor: pointer;
+         /**/
+        /* para resolucion de movil*/
+        }
+        @media (max-width: 780px){
+           main header div.menu ul li{
+               display: block;
+               width: 88%;
+           }
+        }
+       
+ 
+        /**/   
+        
+    </style>
+    
+</body>
+<body>
+    <main>
+        <header>
+            <div class="logo"></div>
+            <div class="menu">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Portfolio</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+            </div>
+        </header>
+          <section>class="gallery">
+              <div class="gallery01">
+                  <h3>sprite 01</h3>  
+            
+              </div>
+              <div class="gallery02">
+                  <h3>sprite 02</h3>
+              </div>
+              <div class="gallery03">
+                  <h3>sprite 03</h3>
+              </div>
+              <div>class</div>
+
+        
+            <style>
+                
+            section div {
+                background-color: #000000bb ;
+                background: url(images/spriteweb.png) ;
+                height: 70px;
+                margin: 160px auto;
+                width: 900px;
+
+            }
+            main section.gallery{
+             display: inline-block;
+             margin-top: 4px;
+            }
+        
+        
+            </style>
+
+          </section>
+            <footer></footer>
+        
+    </main>
+</body>
+</html>
