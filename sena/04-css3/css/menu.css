@@ -1,0 +1,62 @@
+body {
+    background: linear-gradient( #184588, #615c1d);
+    font-family: verdana;
+    font-weight: 400;
+    height: 100vh; 
+}
+main{
+    margin: 20px auto;
+    width: 380px;
+}
+main h1{
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 4px solid #77a345;  
+}
+main nav.menu{
+    list-style: none;
+}
+main nav.menu li a:link,
+main nav.menu li a:visited {
+    background-color: #000000;
+    border: 4px solid #7c9e56;
+    border-radius: 0px 30px 30px 0px;
+    display: block;
+    display: #808f5e;
+    margin-bottom: 20px;
+    padding: 10px;
+    position:relative;
+    text-indent: 40px;
+    text-decoration: none;
+}
+main nav.menu li a span{
+    background-color: #8ae1f7;
+    border-radius: 50%;
+    border: 4px solid #b49d9d;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 1.6rem;
+    border: 4px solid #08313b;
+    display: block;
+    position: absolute;
+   padding: 20px;
+   height: 20px;
+   width: 20px;
+   line-height: 1.6rem;
+   text-indent: 0px;
+   top: -10px; left: -20px;
+   text-indent: -6px;
+   transition: all 0.5s ease-in;
+
+}
+main nav.menu li a:hover  {
+    color: #fff;
+    text-indent:56px;
+}
+    main nav.menu li a:hover span {
+        background-color: #fff;
+        color: #8aa350;
+        transform: rotate(360deg) scale(1.2);
+
+    }
