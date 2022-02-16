@@ -7,8 +7,10 @@ body {
     min-height: 100vh;
 }
 main{
-    margin: 20px auto;
-    width: 380px;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
 }
 main header h1{
     background-color: black;
@@ -28,4 +30,10 @@ main header h1 a:visited{
 }
 main header h1 a:hover {
     transform: translate(-6px);
+}
+main section h2 {
+    border-bottom: 4px dotted black;
+    padding-bottom: 10px;
+    font-size: 1.4rem;
+    text-align: center;
 }
