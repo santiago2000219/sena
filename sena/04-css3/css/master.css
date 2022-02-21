@@ -13,9 +13,9 @@ main{
     width: 80%;
 }
 main header h1{
-    background-color: black;
+    background-color: rgb(46, 93, 163);
     border-radius: 6px;
-    color: #615c1d;
+    color: #1178da;
     padding: 20px;
     position: relative;
     margin-top: 0;
