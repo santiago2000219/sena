@@ -24,6 +24,7 @@ main nav.menu li a:visited {
     border-radius: 0px 30px 30px 0px;
     display: block;
     display: #808f5e;
+    color: white;
     margin-bottom: 20px;
     padding: 10px;
     position:relative;
