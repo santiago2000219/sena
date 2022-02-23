@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        figure.garden {
+            background: url(imgs/12.jfif) no-repeat center /contain;
+            height: 400px;
+            width: 600px;
+            overflow: hidden;
+            position: relative;
+            margin: 1rem auto;
+        }
+        figure.garden div.dove {
+           
+            background: url(imgs/15.gif) no-repeat center /contain;
+            height: 200px;
+            position: absolute;
+            width: 200px;
+            left: -100px;
+            animation: animDove 10s linear infinite ;
+
+        }
+        @keyframes animDove {
+            0%{
+                left: -100px;
+                top: 0px;
+                transform: rotateY(0deg);
+            }
+            100% {
+                left: 800px;
+                top: 0px;
+                transform: rotateY(0deg);
+
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">✔👈</a>animation</h1>
+        </header>
+        <section>
+            <h2>example</h2>
+            <figure class="garden">
+            <div class="dove"></div>
+        </figure>
+        </section>
+    </main>
+</body>
+</html>
