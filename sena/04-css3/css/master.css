@@ -3,8 +3,8 @@ body {
     background: linear-gradient( #184588, #615c1d);
     font-family: verdana;
     font-weight: 400;
-    height: 100vh; 
-    min-height: 100vh;
+     
+    height: 100vh;
 }
 main{
     border-radius: 6px;
