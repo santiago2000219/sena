@@ -32,13 +32,61 @@
             text-align: justify;
         }
         main h1{
-            font-size: 2.6rem;
+            font-size: 4rem;
             text-align: center;
         }
         main h1.span.small,
         main h1 span.medium{
             display: none;
         }
+        /* media queries */
+     @media(max-width: 1024px) {
+     main header figure.logo{
+            background: url(imgs/peps.png) no-repeat center;
+            width: 348px;
+            height: 370px;
+        }
+        main h1.span.small,
+        main h1 span.large{
+            display: none;
+        }
+        main h1 span.medium {
+            display: inline;
+        }
+        main h1{
+            font-size: 2.8rem;
+        }
+        @media (max-width: 1024px) {
+            body{
+                background-color: #f00;
+            }
+
+        }
+        @media (max-width: 780px) {
+            body{
+                background-color: #ff0;
+            }
+
+        }
+    }
+    @media(max-width: 1024px) {
+     main header figure.logo{
+            background: url(imgs/pepsi03.png) no-repeat center;
+            width: 162px;
+            height: 156px;
+        }
+        main h1.span.medium,
+        main h1 span.large{
+            display: none;
+        }
+        main h1 span.small {
+            display: inline;
+        }
+        main h1{
+            font-size: 2rem;
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -51,8 +99,8 @@
             <h1>
                 media queries
                 <span class="large">( >1024px )</span>
-                <span class="medium">(  1024px )</span>
-                <span class="small">(  780x )</span>
+                <span class="medium">(  < 1024px )</span>
+                <span class="small">( < 780x )</span>
             </h1>
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste repellendus numquam eligendi dignissimos debitis rem corporis illo quos excepturi, nulla eveniet id labore illum, dolor doloremque est, cum soluta possimus!
@@ -103,8 +151,7 @@
                 Magni illo temporibus deserunt veritatis aut itaque, maxime unde ad architecto ex tempora, totam ratione corrupti quo, mollitia fuga. Fugit, libero adipisci. Ea aliquam, sunt voluptatibus nemo natus corrupti eum.
                 Nobis, est tenetur fuga at rem, tempore distinctio non inventore laboriosam consectetur a sequi! Unde perspiciatis veniam quia dignissimos dolorem corporis nihil ea quod? Architecto dolor porro excepturi beatae quod.
                 Accusamus libero reiciendis quam perspiciatis hic eius ipsa numquam nesciunt nam quod! Maxime sapiente nemo voluptate ab nesciunt ad facilis quas, laborum aliquam magni soluta quasi recusandae iusto eos maiores.
-                Aspernatur tempore necessitatibus repellendus nemo reiciendis perferendis, in dolor eveniet numquam repudiandae quia nobis excepturi quae quibusdam molestiae ad aperiam facilis sapiente? Necessitatibus assumenda sed repellat, laboriosam blanditiis eius possimus.
-                Id doloribus praesentium sit. Voluptate voluptates eius consequatur perspiciatis ab eos molestias assumenda harum soluta! Ab qui magni cupiditate voluptatem ex placeat, laudantium mollitia illo optio at sint officia corporis.
+                Aspernatur tempore necessitatibus repellendus nemo reis ab eos molestias assumenda harum soluta! Ab qui magni cupiditate voluptatem ex placeat, laudantium mollitia illo optio at sint officia corporis.
             </p>
             <h2>subtitle</h2>
         </section>
