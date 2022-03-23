@@ -24,7 +24,7 @@ nav{
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    
     gap: 1rem;
     align-items: center;
     height: 560px;
