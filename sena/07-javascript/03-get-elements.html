@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get elements</title>
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+    <main>
+        <header>
+            
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+            </a>
+            <h1>get elements</h1>
+        </header>
+        <section>
+            <h3 id="year"></h3>
+            <ul>
+                <li>buylbasaur</li>
+                <li>squirtle</li>
+                <li>charmander</li>
+                <li>goku</li>
+            </ul>
+            <h3 id="nli"></h3>
+        </section>
+            
+    </main>
+    <script>
+        //getelementbyid
+        //geteelementsbytagname nombre etiqueta
+        //queryselector podemos combinar
+        let year = document.getElementById("year")//todos los h3 van aca y son los que llevan la informacion
+        let nli = document.getElementById("nli")
+        let ndate = new Date
+        year.innerText = "currently year:  " + ndate.getFullYear() 
+        //para poner el año
+        //getElementsBytagName
+
+        //separacion
+
+        let lis = document.getElementsByTagName("li") //length es una de las propiedades mas utilizadas de javascript con el lis [2] es para que me escoja el ultimo que tengo por ejemplo con el [3] ya me pondria el ultimo que es goku le pongo un numero antes 
+        nli.innerText = "there are:  " +lis.length + "    li elements \n "  + "last element value is:  "+ lis[3].textContent // especifica para que son los 3 elementos que estan en li 
+    </script>
+    
+</body>
+</html>

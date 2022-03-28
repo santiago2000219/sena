@@ -2,6 +2,7 @@ body {
     background: url(../images/1555172.webp) no-repeat center;
     display: flex;
     justify-content: center;
+    color: #eceaea;
     background-size: cover;
     align-items: center;
     min-height: 80vh;
@@ -15,10 +16,34 @@ main{
     height: 700px;
     border: 2px solid #990;
 }
+header{
+    position: relative;
+}
 header h1 {
     color: #aa0;
     text-align: center;
     font-size: 2.4rem;
+}
+header a:link,
+header a:visited{
+    color: #aa0;
+    display: flex;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 6px;
+    transition: all 0.5s ease-in;
+    left: 20px;
+  
+}
+header a:hover {
+    transition: scale(1.1) translateX(-5px);
+}
+h2, h3, h4{
+    text-align: center;
+    border-bottom: 2px dotted #ffffff99;
+    padding-bottom: 10px;
+    margin: 0px 40px;
 }
 nav{
     
@@ -44,6 +69,7 @@ nav li a:visited{
     text-decoration: none;
     width: 260px;
     transition: background 0.2 ease-in;
+
 }
 nav li a i {
     background-color: #000;
@@ -64,3 +90,24 @@ nav li a:hover {
 nav li a:hover i{
     transform: scale(1.4);
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: none;
+    scrollbar-color: #a05454 #316d68;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #316d68;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #a05454;
+    border-radius: 10px;
+    border: 3px dotted #ffffff;
+  }
