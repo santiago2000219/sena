@@ -6,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>get elements</title>
     <link rel="stylesheet" href="css/menu.css">
+    <style>
+        p{
+            padding-left: 20px;
+            
+        }
+        button {
+            background-color: aquamarine;
+            margin-top: 40px;
+            border: none;
+            padding: 10px;
+        }
+       
+    </style>
 </head>
+
+
 <body>
     <main>
         <header>
@@ -27,24 +42,51 @@
                 <li>goku</li>
             </ul>
             <h3 id="nli"></h3>
+            
+
+<!-- para que me salga un parrafo de que hay 3-->
+            <p class="paragraph">lorem ipsum dolor</p>
+            <p class="paragraph">lorem ipsum dolor</p>
+            <p class="paragraph">lorem ipsum dolor</p>
+            <h3 id="np"></h3>
+            <button class="btn first">button 1</button>
+            <button class="btn">button 2</button>
+            <button class="btn">button 3</button>
         </section>
             
     </main>
     <script>
-        //getelementbyid
+        //cambiar el DOM(document object model)
+        //getElementbyid
         //geteelementsbytagname nombre etiqueta
         //queryselector podemos combinar
         let year = document.getElementById("year")//todos los h3 van aca y son los que llevan la informacion
         let nli = document.getElementById("nli")
+        let np = document.getElementById("np")
         let ndate = new Date
         year.innerText = "currently year:  " + ndate.getFullYear() 
         //para poner el año
         //getElementsBytagName
+        let nps = document.getElementsByClassName("paragraph")
+       
 
-        //separacion
+        //separacion    
 
         let lis = document.getElementsByTagName("li") //length es una de las propiedades mas utilizadas de javascript con el lis [2] es para que me escoja el ultimo que tengo por ejemplo con el [3] ya me pondria el ultimo que es goku le pongo un numero antes 
         nli.innerText = "there are:  " +lis.length + "    li elements \n "  + "last element value is:  "+ lis[3].textContent // especifica para que son los 3 elementos que estan en li 
+        nps[2].style.color = "red"
+        np.innerText = "there are :  " + nps.length + 
+                       "p with class paragraph"
+        //getElementsByClassName
+        
+        //length es la longitud
+        //para el ultimo paragraph se ha de color rojo escribo en la consola nps[2].style.color = "red"
+
+        //queryselector(s)
+        let btn = document.querySelector("button.first") //child es para tomar el primero de los button
+        let btns = document.querySelectorAll("button.btn")
+        btn.style.marginLeft = "100px" //para correr lo del button
+        btns[1].style.backgroundColor = "#aa0" //para ponerle color al button 2
     </script>
     
 </body>

@@ -10,11 +10,11 @@ body {
     font-weight: 400;
 }
 main{
-    background-color: #00000099;
+    background-color: #12429c99;
     border-radius: 40px;
     width: 420px;
     height: 700px;
-    border: 2px solid #990;
+    border: 2px solid rgb(153, 69, 0);
 }
 header{
     position: relative;
@@ -26,7 +26,7 @@ header h1 {
 }
 header a:link,
 header a:visited{
-    color: #aa0;
+    color: rgb(189, 189, 112);
     display: flex;
     position: absolute;
     height: 40px;
