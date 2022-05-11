@@ -196,7 +196,9 @@
        //0 - 9 =48,49,50,51,52,53,54,55,56,57
        //backSpace => keycode
        switch (evt.keyCode) {
-        
+           case 8:
+               deleteLastValue
+               break;
            case 96:
                addToDisplay(0)
                break;
