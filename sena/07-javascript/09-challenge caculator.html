@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>min menu JS</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        header h1{
+            font-size: 1.6rem;
+            line-height: 3.8rem;
+        }
+        div.calculator{
+            border: 2px solid rgb(0, 0, 0);
+            margin: 50px auto;
+            width: 295px;
+        }
+        header.display {
+            background: url(images/calc/BTN-PANTALLA.svg) no-repeat center ;
+            position: relative;
+            height: 100px;
+            width: 295px;
+        }
+        header.display input.value {
+            border: none;
+            background: none;
+            width: 200px;
+            outline: none;
+            color: rgb(207, 189, 86);
+            font-style: normal;
+            font-family: Poppins;
+            font-size: 20px;
+            position: absolute;
+            right: 80px;
+            top: 60px;
+            text-align: right;
+        }
+        section.buttons {
+            display: grid;
+            grid-template-columns:  repeat(auto-fit, minmax(62px, 1fr));
+            row-gap: 10px;
+            column-gap: 1px;
+            margin: 10px 0;
+        }
+        section.buttons button{
+            border: none;
+            cursor: pointer;
+            height: 55px;
+            width: 65px;
+            transition: transform 0.2 ease-in;
+        }
+        
+        section.buttons button:hover{
+            transform: scale(1.15) skew(5deg);
+        }
+        button.btn-clear {
+            background: url(images/calc/Group.png) no-repeat center;
+        }
+        button.btn-back {
+            background: url(images/calc/grupo-borrar.png) no-repeat center;
+        }
+        button.btn-mod {
+            background: url(images/calc/btn-grupoporcentaje.png) no-repeat center;
+        }
+        button.btn-pow {
+            background: url(images/calc/btn-division.png) no-repeat center;
+        }
+        button.btn-1 {
+            background: url(images/calc/btn-1.png) no-repeat center;
+        }
+        button.btn-2 {
+            background: url(images/calc/btn-dos.png) no-repeat center;
+        }
+        button.btn-3 {
+            background: url(images/calc/btn-tres.png) no-repeat center;
+        }
+        button.btn-prod {
+            background: url(images/calc/btn-multiplicacion.png) no-repeat center;
+        }
+        button.btn-4 {
+            background: url(images/calc/btn-4.png) no-repeat center;
+        }
+        button.btn-5 {
+            background: url(images/calc/btn-5.png) no-repeat center;
+        }
+        button.btn-6 {
+            background: url(images/calc/btn-6.png) no-repeat center;
+        }
+        button.btn-subs {
+            background: url(images/calc/btn-resta.png) no-repeat center;
+        }
+        button.btn-7 {
+            background: url(images/calc/btn-7.png) no-repeat center;
+        }
+        button.btn-8 {
+            background: url(images/calc/btn-8.png) no-repeat center;
+        }
+        button.btn-9 {
+            background: url(images/calc/btn-9.png) no-repeat center;
+        }
+        button.btn-add {
+            background: url(images/calc/btn-sumas.png) no-repeat center;
+        }
+        section.buttons button.btn-0 {
+            background: url(images/calc/btn-cero.png) no-repeat center;
+            width: 138px;          
+        }
+        button.btn-dot {
+            background: url(images/calc/btn-coma.png) no-repeat center;
+            margin-left: 148px;
+        }
+        button.btn-equal {
+            background: url(images/calc/btn-igual.png) no-repeat center;
+        }
+   
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+           
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+            </a>
+            <h1>calculator</h1>
+        </header>
+        <section>
+            <div class="calculator">
+                <header class="display">
+                  <input type="text" class="value" readonly>
+                </header>
+                <section class="buttons">
+                <button class="btn-clear"></button>
+                <button class="btn-back"></button>
+                <button class="btn-pow" data-opr="/"></button>
+                <button class="btn-mod" data-opr="%"></button>
+                <button class="btn-1" data-num="1"></button>
+                <button class="btn-2" data-num="2"></button>            
+                <button class="btn-3" data-num="3"></button>
+                <button class="btn-prod" data-opr="*"></button>
+                <button class="btn-4" data-num="4"></button>
+                <button class="btn-5" data-num="5"></button>
+                <button class="btn-6" data-num="6"></button>
+                <button class="btn-subs" data-opr="-"></button>
+                <button class="btn-7" data-num="7"></button>
+                <button class="btn-8" data-num="8"></button>
+                <button class="btn-9" data-num="9"></button>
+                <button class="btn-add" data-opr="+"></button>
+                <button class="btn-0" data-num="0"></button>
+                <button class="btn-dot" data-opr="."></button>
+                <button class="btn-equal"></button>
+            </section>
+            </div>
+        </section>
+     
+            
+    </main>
+    <script>
+
+        //value in display
+        const display = document.querySelector("input.value")
+        //buttons
+        const btnClear = document.querySelector("button.btn-clear")
+        const btnBack = document.querySelector("button.btn-back")
+        const btnEqual = document.querySelector("button.btn-equal")
+        //actions
+        //numbers
+        const btnsNumbers = document.querySelectorAll("button[data-num]")
+        const btnsOperators = document.querySelectorAll("button[data-opr]")
+        //logic value
+        var operStatus = true
+       //activate click event in all numbers & operators
+       
+
+    for (let i = 0; i < btnsNumbers.length; i++){
+        btnsNumbers[i].onclick = function() {
+            operStatus = true
+            addToDisplay(this.getAttribute("data-num"))
+        };
+    }
+        for (let i = 0; i < btnsOperators.length; i++) {
+        btnsOperators[i].onclick = function() {
+            if(operStatus) {
+            addToDisplay(this.getAttribute("data-opr"))
+            operStatus = false
+        }
+        };
+        
+    }
+      document.onkeyup = (evt) => {
+       //alert(evt.keyCode)
+       //0 - 9 =48,49,50,51,52,53,54,55,56,57
+       //backSpace => keycode
+       switch (evt.keyCode) {
+        
+           case 96:
+               addToDisplay(0)
+               break;
+
+               case 97:
+               addToDisplay(1)
+               break;
+
+               case 98:
+               addToDisplay(2)
+               break;
+
+               case 99:
+               addToDisplay(3)
+               break;
+
+               case 100:
+               addToDisplay(4)
+               break;
+
+               case 101:
+               addToDisplay(5)
+               break;
+
+               case 102:
+               addToDisplay(6)
+               break;
+               case 103:
+               addToDisplay(7)
+               break;
+               case 104:
+               addToDisplay(8)
+               break;
+               case 105:
+               addToDisplay(9)
+               break;
+               case 106:
+               addToDisplay("*")
+               break;
+               case 171:
+               addToDisplay("+")
+               break;
+
+       
+           default:
+               break;
+       }
+      }
+       btnClear.onclick = () => {
+            display.value = ''
+            operStatus = false
+        }
+        btnBack.onclick = () => {
+            deleteLastValue()
+        }
+        function deleteLastValue(){
+            display.value = display.value.slice(0, -1)
+            if (isNaN(display.value.slice(-1))){
+                operStatus = false
+            } else {
+                operStatus = true
+            }
+        }
+     
+        //Functions 
+        function addToDisplay(c){
+            if(validateLength()){
+                display.value += c
+            }
+
+
+        }
+        function validateLength() {
+            if(display.value.length < 30) {
+                return true
+            } else {
+                return false
+            }
+        }
+    </script>
+</body>
+</html>
