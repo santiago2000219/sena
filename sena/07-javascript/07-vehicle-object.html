@@ -44,7 +44,7 @@
         section button.btnDarkMode:hover {
             transform: scale(1.2) rotate(45deg);
         }
-        section ul.attributes li.brand{
+        section ul.attributes {
             position: absolute;
             list-style: none;
             top: 150px;
@@ -55,25 +55,25 @@
             gap: 400px;
             flex-direction: row;         
         }
-        section ul.attributes li{
+        main.darkmode section ul.attributes li {
+            color: #f7db72;
+        }
+        section ul.attributes li.refer {
             position: absolute;
             list-style: none;
-            top: 150px;
-            left: 210px;
-            display: flex;
+            top: 0px;
+            left: 270px;
             justify-content: center;
             align-items: center;
             gap: 400px;
-            flex-direction: row;
+            flex-direction: row;       
         }
-        main.Darkmode section ul.attributes li{
-            color: red;
-        }
-        section ul.attributes li.model{
+        
+        section ul.attributes li.model {
             position: absolute;
             list-style: none;
-            top: 200px;
-            left: 270px;
+            top: 70px;
+            left: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -83,17 +83,15 @@
         section ul.attributes li.color{
             position: absolute;
             list-style: none;
-            top: 225px;
-            left: 20px;
+            top: 70px;
+            left: 250px;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 400px;
             flex-direction: row;
         }  
-        main.darkmode section ul.attributes li{
-            color: aliceblue;
-        }    
+        
         section ul.attributes li {
             color: rgb(209, 231, 12);
             font-size: 0.8rem;
@@ -113,21 +111,26 @@
             pointer-events: none;
         }
         
-        figure.landscape div{
-            position: absolute;
-            height: 268px;
-            width: 368px;
-        }
+        
         /*move parallax*/
-     
+        figure.landscape.move div.layer03 {
+            animation: animLayers 20s linear infinite;
+        }
+        figure.landscape.move div.layer02 {
+            animation: animLayers 10s linear infinite;
+        }
+        figure.landscape.move div.layer02 {
+            animation: animLayers 5s linear infinite;
+        }
+
         figure.landscape.stop div.layer03,
         figure.landscape.stop div.layer02,
         figure.landscape.stop div.layer01{
             animation-play-state: paused;
         }
-        figure.landscape.stop div.layer03,
-        figure.landscape.stop div.layer02,
-        figure.landscape.stop div.layer01{
+        figure.landscape.reverse div.layer03,
+        figure.landscape.reverse div.layer02,
+        figure.landscape.reverse div.layer01{
             animation-direction: reverse;
         }
         
@@ -135,6 +138,7 @@
         background: url(images/vehicle/day03.svg.svg) repeat-x;
         height: 268px;
         border-radius: 10px;
+        top: 20px;
         position: absolute;
         width: 368px;
         animation: animLayers 20s linear infinite;
@@ -145,12 +149,14 @@
         height: 228px;
         border-radius: 10px;
         position: absolute;
+        top: 30px;
         width: 368px;
         animation: animLayers 10s linear infinite;
         }
         figure.landscape div.layer01 {
         background: url(images/vehicle/day01.svg.svg) repeat-x;
         height: 268px;
+        top: 10px;
         border-radius: 10px;
         position: absolute;
         width: 368px;
@@ -164,12 +170,12 @@
         main.darkmode figure.landscape div.layer02 {
         background: url(images/vehicle/montañasdarkmode.svg) repeat-x;
     }
-        main.darkmode figure.landscape div.layer01x {
+        main.darkmode figure.landscape div.layer01 {
         background: url(images/vehicle/darkmodenoche.svg) repeat-x;
-    }
+    }   
 
 
-        @keyframes animLayers {
+    @keyframes animLayers {
             0% {background-position: 0;}
             100% {background-position: -736px;}
             
@@ -189,7 +195,7 @@
            overflow: hidden;
            
         }
-        nav.changeVehicle button{
+        nav.changeVehicle button {
             border: none;
             cursor: pointer;
             width: 60px;
@@ -211,6 +217,7 @@
         nav.changeVehicle button.next {
             background: url(images/vehicle/delante.svg) no-repeat center;
         }
+       
         nav.changeVehicle button.prev:hover {
             transform: translateX(-10px);
     
@@ -220,7 +227,7 @@
     
         }
         section img {
-            border: 2px solid black;
+           
             bottom: 0px;
             object-fit: contain;
             height: 50px;
@@ -229,7 +236,7 @@
             left: 50%;
             transform: translateX(-50%);
             position: absolute;
-            width: 150px;
+            width: 100px;
             z-index: 9;
 
         }
@@ -244,7 +251,7 @@
         nav.controls {
            
             position: absolute;
-            top: 535px;
+            top: 550px;
             width: 370px;
             left: 15px;
             padding: 0%;
@@ -264,19 +271,19 @@
             width: 65px;
           
         }
-        nav.controls button.btnStart{
+        nav.controls button.btnStart {
             background: url(images/vehicle/btn-start.svg);
         }
-        nav.controls button.btnForward{
+        nav.controls button.btnForward {
             background: url(images/vehicle/btn-siguiente.svg);
         }
-        nav.controls button.btnStop{
+        nav.controls button.btnStop {
             background: url(images/vehicle/pausa.svg);
         }
-        nav.controls button.btnBackward{
+        nav.controls button.btnBackward {
             background: url(images/vehicle/btn-devolver.svg);
         }
-        nav.controls button.btnTurnoff{
+        nav.controls button.btnTurnoff { 
             background: url(images/vehicle/btn-cancelar.svg);
         }
         nav.controls button:hover {
@@ -302,132 +309,144 @@
         <section>
             <button class="btnDarkMode"> Dark Mode </button>
             <ul class="attributes">
-            <li class="brand"></li>
-            <li class="refer"></li>
-            <li class="model"></li>
-            <li class="color"></li>
-        </ul>
-        <img src="" class="image">
-        <figure class="landscape">
-        <div class="layer03"></div>
-        <div class="layer02"></div>
-        <div class="layer01"></div>
-    </figure>
-
-        <nav class="changeVehicle">
-        <button class="prev">prev</button>
-        <button class="next">next</button>
-        </nav>
-        <nav class="controls">
-        <button class="btnStart">start</button>
-        <button class="btnForward">forward</button>
-        <button class="btnStop">stop</button>
-        <button class="btnBackward">backward</button>
-        <button class="btnTurnoff">turnoff</button>
-        </nav>
+                <li class="brand"></li>
+                <li class="refer"></li>
+                <li class="model"></li>
+                <li class="color"></li>
+            </ul>
+            <img src="" class="image">
+            <figure class="landscape">
+                <div class="layer03"></div>
+                <div class="layer02"></div>
+                <div class="layer01"></div>
+            </figure>
+            <nav class="changeVehicle">
+                <button class="prev">Prev</button>
+                <button class="next">Next</button>
+            </nav>
+            <nav class="controls">
+                <button class="btnStart">Start</button>
+                <button class="btnForward">Forward</button>
+                <button class="btnStop">Stop</button>
+                <button class="btnBackward">Backward</button>
+                <button class="btnTurnOff">TurnOff</button>
+            </nav>
         </section>
             
     </main>
     <script>
         var cindex = 0
+        // Booleans
         var engine = false
-        var move = false
-
-        const main = document.querySelector("main")
-
-        const fland = document.querySelector("figure.landscape")
-        const btnDarkMode = document.querySelector('button.btnDarkMode')
-        const btnPrev = document.querySelector('button.prev')
-        const Backward = document.querySelector("button.btnBackward")
-        const btnNext = document.querySelector('button.next')
-        const btnStart = document.querySelector("button.btnStart")
-        const btnStop = document.querySelector("button.btnStop")
-        const btnTurnoff = document.querySelector("button.btnTurnoff")
-        const btnForward = document.querySelector("button.btnForward")
+        var move   = false
+        // Elements
+        const main  = document.querySelector('main')
+        const fland = document.querySelector('figure.landscape')
+        // Buttons
+        const btnDarkMode = document.querySelector('button.btnDarkMode') 
+        const btnPrev     = document.querySelector('button.prev') 
+        const btnNext     = document.querySelector('button.next') 
+        const btnStart    = document.querySelector('button.btnStart')
+        const btnForward  = document.querySelector('button.btnForward')
+        const btnStop     = document.querySelector('button.btnStop')
+        const btnBackward = document.querySelector('button.btnBackward')
+        const btnTurnOff  = document.querySelector('button.btnTurnOff')
+        // Attributes
         const brand = document.querySelector('li.brand')
         const refer = document.querySelector('li.refer')
         const model = document.querySelector('li.model')
         const color = document.querySelector('li.color')
-        const image = document.querySelector("img.image")
-
-
+        const image = document.querySelector('img.image')
+        // Object 
         const vehicle = {
-            attributes:[
-                {
-                    brand: 'toyota', refer: 'yaris', model: 2020, color: 'black', image:"images/vehicle/png-clipart-ferrari-ferrari-removebg-preview.png"
-                },
-                {
-                    brand: 'renault', refer: 'clio', model: 2018, color: 'red', image: 'images/vehicle/car02.png'
-                },
-                {
-                    brand: 'ford', refer: 'fiesta', model: 2016, color: 'green', image: 'images/vehicle/car03.png'
-                },
-                {
-                    brand: 'fiat', refer: '500', model: 2007, color: 'blue', image: 'images/vehicle/car04.png'
-                }
-            ], 
+            attributes: [
+                { brand: 'Toyota',  refer: 'Yaris',  model: 2020, color: 'Orange', image: 'images/vehicle/car01.png' },
+                { brand: 'Renault', refer: 'Clio',   model: 2018, color: 'Green',  image: 'images/vehicle/car02.png' },
+                { brand: 'Ford',    refer: 'Fiesta', model: 2016, color: 'Blue',   image: 'images/vehicle/car03.png' },
+                { brand: 'Fiat',    refer: '500',    model: 2007, color: 'Red',    image: 'images/vehicle/car04.png' }
+            ],
         
 
-            showAttributes: function(index) {
+            showAttributes: function(index)  {
                 brand.innerText = this.attributes[index].brand
                 refer.innerText = this.attributes[index].refer
                 model.innerText = this.attributes[index].model
                 color.innerText = this.attributes[index].color
-                image.setAttributeNS("src", this.attributes[index].images)
-
-               
+                image.setAttribute('src', this.attributes[index].image)
             },
             darkMode: function() {
-                main.classList.toggle("darkmode")
-                
+                main.classList.toggle('darkmode')
             },
             start: function() {
-               if (!engine) {
-                   image.classList.add("start")
-                   engine = true
-               }
+                if (!engine) {
+                    image.classList.add('start')
+                    engine = true
+                }
             },
             forWard: function() {
-               if (engine && !move){                  
-                   fland.classList.add("move")
-                   fland.classList.remove("stop")
-                   move = true
-               }
+                if (engine && !move) {
+                    fland.classList.add('move')
+                    fland.classList.remove('reverse')
+                    fland.classList.remove('stop')
+                    move = true
+                }
             },
-            stop: function(){
-                if(engine && move) {
-                    fland.classList.add("stop")
+            stop: function() {
+                if (engine && move) {
+                    fland.classList.add('stop')
                     move = false
                 }
             },
-            turnoff: function() {
-                if (engine && !move){
-                    image.classList.remove("star")
+            backWard: function() {
+                if (engine && !move) {
+                    fland.classList.add('move')
+                    fland.classList.remove('stop')
+                    fland.classList.add('reverse')
+                    move = true
+                }
+            },
+            turnOff: function() {
+                if (engine && !move) {
+                    image.classList.remove('start')
                     engine = false
                 }
-                
             }
-        
-
         }
-        
-        vehicle.showattributes(0)
 
-       btnDarkMode.onclick = () => {
-     vehicle.darkMode()
-           }
+        // - - - 
+        vehicle.showAttributes(0)
+        // Actions
+        btnDarkMode.onclick = () => {
+            vehicle.darkMode()
+        }
+        btnStart.onclick = () => {
+            vehicle.start()
+        }
+        btnForward.onclick = () => {
+            vehicle.forWard()
+        }
+        btnStop.onclick = () => {
+            vehicle.stop()
+        }
+        btnBackward.onclick = () => {
+            vehicle.backWard()
+        }
+        btnTurnOff.onclick = () => {
+            vehicle.turnOff()
+        }
+        // - - -
         btnNext.onclick = () => {
-           if(cindex < vehicle.attributes.length-1){
-               cindex++
-               vehicle.showAttributes(cindex)
+            if (cindex < vehicle.attributes.length-1) {
+                cindex++
+                vehicle.showAttributes(cindex)
+            }
         }
-    }
         btnPrev.onclick = () => {
-            if(cindex > 0){
-               cindex--
-               vehicle.showAttributes(cindex)
+            if (cindex > 0) {
+                cindex--
+                vehicle.showAttributes(cindex)
+            }
         }
-    }
     </script>
 </body>
 </html>

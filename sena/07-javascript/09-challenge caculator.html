@@ -160,124 +160,181 @@
             
     </main>
     <script>
-
-        //value in display
-        const display = document.querySelector("input.value")
-        //buttons
-        const btnClear = document.querySelector("button.btn-clear")
-        const btnBack = document.querySelector("button.btn-back")
-        const btnEqual = document.querySelector("button.btn-equal")
-        //actions
-        //numbers
-        const btnsNumbers = document.querySelectorAll("button[data-num]")
-        const btnsOperators = document.querySelectorAll("button[data-opr]")
-        //logic value
-        var operStatus = true
-       //activate click event in all numbers & operators
-       
-
-    for (let i = 0; i < btnsNumbers.length; i++){
-        btnsNumbers[i].onclick = function() {
-            operStatus = true
-            addToDisplay(this.getAttribute("data-num"))
-        };
-    }
-        for (let i = 0; i < btnsOperators.length; i++) {
-        btnsOperators[i].onclick = function() {
-            if(operStatus) {
-            addToDisplay(this.getAttribute("data-opr"))
-            operStatus = false
+        // Value in Display
+        const display = document.querySelector('input.value')
+        // Buttons
+        const btnClear = document.querySelector('button.btn-clear')
+        const btnBack  = document.querySelector('button.btn-back')
+        const btnEqual = document.querySelector('button.btn-equal')
+        // All Numbers & Operators
+        const btnsNumbers   = document.querySelectorAll('button[data-num]')
+        const btnsOperators = document.querySelectorAll('button[data-opr]')
+        // Logic Value
+        var operStatus = false
+        // Activate Click Event in All Numbers & Operators
+        for (let i = 0; i < btnsNumbers.length; i++) {
+            btnsNumbers[i].onclick = function() {
+                operStatus = true
+                addToDisplay(this.getAttribute('data-num'))
+            }
         }
-        };
-        
-    }
-      document.onkeyup = (evt) => {
-       //alert(evt.keyCode)
-       //0 - 9 =48,49,50,51,52,53,54,55,56,57
-       //backSpace => keycode
-       switch (evt.keyCode) {
-           case 8:
-               deleteLastValue
-               break;
-           case 96:
-               addToDisplay(0)
-               break;
+        for (let i = 0; i < btnsOperators.length; i++) {
+            btnsOperators[i].onclick = function() {
+                if(operStatus) {
+                    addToDisplay(this.getAttribute('data-opr'))
+                    operStatus = false
+                }
+            }
+        }
 
-               case 97:
-               addToDisplay(1)
-               break;
-
-               case 98:
-               addToDisplay(2)
-               break;
-
-               case 99:
-               addToDisplay(3)
-               break;
-
-               case 100:
-               addToDisplay(4)
-               break;
-
-               case 101:
-               addToDisplay(5)
-               break;
-
-               case 102:
-               addToDisplay(6)
-               break;
-               case 103:
-               addToDisplay(7)
-               break;
-               case 104:
-               addToDisplay(8)
-               break;
-               case 105:
-               addToDisplay(9)
-               break;
-               case 106:
-               addToDisplay("*")
-               break;
-               case 171:
-               addToDisplay("+")
-               break;
-
-       
-           default:
-               break;
-       }
-      }
-       btnClear.onclick = () => {
-            display.value = ''
-            operStatus = false
+document.onkeyup = (evt) => {
+            console.log(evt.keyCode)
+            // 0 - 9     => KeyCodes: 48,49,50,51,52,53,54,55,56,57
+            // BackSpace => keyCode: 8
+            // Enter     => keyCode: 13
+            // Delete    => keyCode: 46
+            // %         => keyCode: 53
+            // +         => keyCode: 187
+            // -         => keyCode: 189
+            // .         => keyCode: 190
+            // /         => keyCode: 191
+            // ^         => keyCode: 219
+            // *         => keyCode: 221
+            switch (evt.keyCode) {
+                case 8:
+                    deleteLastValue()
+                    break;
+                case 13:
+                    showResult()
+                    break;
+                case 46:
+                    clearDisplay()
+                    break;
+                case 48:
+                    addToDisplay(0) 
+                    operStatus = true
+                    break;
+                case 49:
+                    addToDisplay(1)
+                    operStatus = true
+                    break;
+                case 50:
+                    addToDisplay(2)   
+                    operStatus = true
+                    break;
+                case 51:
+                    addToDisplay(3)   
+                    operStatus = true
+                    break;
+                case 52:
+                    addToDisplay(4)   
+                    operStatus = true
+                    break;
+                case 53:
+                    if(evt.shiftKey) {
+                        if(operStatus) {
+                            addToDisplay('%')
+                            operStatus = false
+                        }
+                    } else {
+                        addToDisplay(5)
+                        operStatus = true
+                    }
+                    break;
+                case 54:
+                    addToDisplay(6)   
+                    operStatus = true
+                    break;
+                case 55:
+                    addToDisplay(7)   
+                    operStatus = true
+                    break;
+                case 56:
+                    addToDisplay(8)   
+                    operStatus = true
+                    break;
+                case 57:
+                    addToDisplay(9)   
+                    operStatus = true
+                    break;
+                case 187:
+                    if(operStatus) {
+                        addToDisplay('+')
+                        operStatus = false
+                    }
+                    break;
+                case 189:
+                    if(operStatus) {
+                        addToDisplay('-')
+                        operStatus = false
+                    }
+                    break;
+                case 190:
+                    if(operStatus) {
+                        addToDisplay('.')
+                        operStatus = false
+                    }
+                    break;
+                case 191:
+                    if(operStatus) {
+                        addToDisplay('/')
+                        operStatus = false
+                    }   
+                    break;
+                case 219:
+                    if(operStatus) {
+                        addToDisplay('**') 
+                        operStatus = false
+                    } 
+                    break;
+                case 221: 
+                    if(operStatus) {
+                        addToDisplay('*') 
+                        operStatus = false
+                    }  
+                    break; 
+                default:
+                    break;
+            }
+        }
+        btnClear.onclick = () => {
+            clearDisplay()
         }
         btnBack.onclick = () => {
             deleteLastValue()
         }
-        function deleteLastValue(){
+        btnEqual.onclick = () => {
+            showResult()
+        }
+        // Functions
+        function showResult() {
+            display.value = eval(display.value)
+        }
+        function clearDisplay() {
+            display.value = ''
+            operStatus = false
+        }
+        function deleteLastValue() {
             display.value = display.value.slice(0, -1)
-            if (isNaN(display.value.slice(-1))){
+            if (isNaN(display.value.slice(-1))) {
                 operStatus = false
             } else {
                 operStatus = true
             }
         }
-     
-        //Functions 
-        function addToDisplay(c){
-            if(validateLength()){
+        function addToDisplay(c) {
+            if(validateLength()) {
                 display.value += c
             }
-
-
         }
         function validateLength() {
-            if(display.value.length < 30) {
+            if(display.value.length < 18) {
                 return true
             } else {
                 return false
             }
         }
+        
     </script>
 </body>
 </html>
