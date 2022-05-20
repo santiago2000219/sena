@@ -7,61 +7,66 @@
     <title>Challengue</title>
     <link rel="stylesheet" href="css/menu.css">
     <style>
-        
+        *{
+            color: black;
+        }
         .fondo{
-            background: url(images/guerra/Group\ 6.png) no-repeat;
-            width: 325px;
+            background: url(images/guerra/Group\ 3.png) no-repeat;
+            width: 425px;
             height: 600px;
             position: relative;
-            margin: auto;
+            margin-left: 50px;
             padding: 1px;
             
         }
         input.name{
-            border-radius: 20px;
             position: absolute;
-            width: 250px;
+            width: 180px;
             height: 30px;
-            background-color: #ECECEC;
-            top: 280px;
-            left: 30px;
+            background-color: #000000;
+            border-radius: 10px;
             border: 1px solid #000000;
             outline: none;
             text-indent: 10px;
+            top: 280px;
+            left: 100px;
+            color: #ffffff;
         }
-        input#birhtdate{
-            border-radius: 20px;
+        input#fechaNacimiento{
             position: absolute;
-            width: 250px;
+            width: 100px;
             height: 30px;
-            top: 360px;
-            margin-left: 30px;
+            background-color: #000000;
+            border-radius: 10px;
+            border: 1px solid #ffffff;
+            outline: none;
+            color: #ffffff;
             text-indent: 10px;
-            text-align: center;
-            padding: 2px;
+            top: 360px;
+            left: 170px;
         }
         .men{
             background: url(images/guerra/hombre.svg.png) no-repeat;
-            width: 120px;
+            width: 100px;
             height: 100px;
             position: absolute;
             border:none;
-            top: 120px;
-            left: 30px;
+            top: 130px;
+            left: 35px;
             cursor: pointer;
             transition: transform .2s ease-in;
             
         }
         button.men:hover{
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         .woman{
             background: url(images/guerra/women.png) no-repeat;
-            width: 120px;
-            height: 95px;
+            width: 105px;
+            height: 100px;
             position: absolute;
             border:none;
-            top: 120px;
+            top: 130px;
             left: 180px;
             cursor: pointer;
             transition: transform .2s ease-in;
@@ -69,23 +74,16 @@
         button.woman:hover{
             transform: scale(1.1);
         }
-        .checkHB{
-            background: url(images/challengue/validateB.svg) no-repeat;
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            margin-left: 60px;
-            
-        }
+       
         .checkHG{
-            background: url(images/challengue/validateG.svg) no-repeat;
-            width: 20px;
-            height: 20px;
+            background: url(images/guerra/cheque\ 1.png) no-repeat;
+            width: 50px;
+            height: 50px;
             position: absolute;
             margin-left: 60px;
         }
         .checkMG{
-            background: url(images/challengue/validateG.svg) no-repeat;
+            background: url(images/guerra/cheque\ 1.png) no-repeat;
             width: 100px;
             height: 100px;
             position: absolute;
@@ -118,7 +116,7 @@
             transform: scale(1.1);
         }
         
-        main.menGo article{
+        main.Hombre article{
             background: url(images/guerra/Group\ 5.png) no-repeat center;
             width: 425px;
             height: 600px;
@@ -128,49 +126,7 @@
             
             
         }
-        main.menGo article button.one{
-            box-sizing: border-box;
-            position: absolute;
-            width: 90px;
-            height: 30px;
-            background: #FFA4A4;
-            border: 1px solid #000000;
-            border-radius: 20px;
-            cursor: pointer;
-            top: 554px;
-            text-align: center;
-            bottom: 0;
-            left: 170px;
-            cursor: pointer;
-
-        }
-        
         main.menNo article{
-            background: url(images/challengue/menNwar.svg);
-            width: 425px;
-            height: 600px;
-            position: relative;
-            margin: auto;
-            padding: 1px;
-        }
-        main.menNo article button{
-            box-sizing: border-box;
-            position: absolute;
-            width: 90px;
-            height: 30px;
-            background: #FFA4A4;
-            border: 1px solid #000000;
-            border-radius: 20px;
-            cursor: pointer;
-            top: 554px;
-            text-align: center;
-            bottom: 0;
-            left: 170px;
-            
-            cursor: pointer;
-
-        }
-        main.womanNo article{
             background: url(images/guerra/Group\ 7.png) no-repeat center;
             width: 425px;
             height: 600px;
@@ -178,63 +134,95 @@
             margin: auto;
             padding: 1px;
         }
-        main.womanNo article button.three{
+        main.Woman article button.three,
+        main.menNo article button.two,main.Hombre article button.one{
+            background: url(images/guerra/Frame.png) no-repeat;
             box-sizing: border-box;
             position: absolute;
-            width: 90px;
-            height: 30px;
-            background: #FFA4A4;
-            border: 1px solid #000000;
-            border-radius: 20px;
+            width: 150px;
             cursor: pointer;
-            top: 554px;
-            text-align: center;
+            width: 150px;
+            height: 50px;
+            top: 500px;
             bottom: 0;
-            left: 170px;
+            left: 200px;
             cursor: pointer;
+            border: none;
+            transition: transform .2s ease-in;
 
         }
+        main.Woman article button.three:hover,
+        main.menNo article button.two:hover,main.Hombre article button.one:hover{
+            transform: scale(1.1);
+        }
+
+        main.Woman article{
+            background: url(images/guerra/Group\ 7.png) no-repeat center;
+            width: 425px;
+            height: 600px;
+            position: relative;
+            margin: auto;
+            padding: 1px;
+        }
        
-        h1#edadmenGo{
-            border: 2px solid red;
-            margin: 10px;
-            width: 250px;
-            border-radius: 20px;
-            background-color: #ECECEC;
-            border: 1px solid #000000;
+        h1#edadhombre,h1#edadHombre,h1#edadMujer{
+            
+            width: 150px;
+            margin-left: 206px;
+            margin-top: 50px;
             text-indent: 5px;
-            cursor: pointer;
+            background-color: #333333;
+            border-radius: 10px;
+            border: 1px solid #000000;
+            color: #ffffff99;
+            position: absolute;
+            font-size: 13px;
+        }
+        h1#nameGO,h1#Numeronombre,h1#nameW{
+            
+            width: 150px;
+            margin-left: 50px;
+            margin-top: 50px;
+            text-indent: 5px;
+            color: #ffffff99;
+            background-color: #333333;
+            border-radius: 10px;
+            border: 1px solid #000000;
+            position: absolute;
+            font-size: 13px;
         }
         
         .ocultar{
             display: none;
         }
-        
+        section.information1,section.information2,section.information3{
+            margin-top: 54px;
+        }
     </style>
 </head>
 <body>
-    <main class="menGo ocultar">
+    <main class="Hombre ocultar">
         <header>
             <a href="index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
                 </svg>
             </a>
-            <h1>war</h1>
+            <h1>Challengue</h1>
         </header>
         <article>
-            <section>
-                <h1 id="edadmenGo"></h1>
+            <section class="information1">
+                <h1 id="edadhombre"></h1>
+                <h1 id="nameGO"></h1>
             </section>
             
             <footer>
-                <button class="one">Back</button>
+                <button class="one"></button>
             </footer>
             
         </article>
         
     </main>
-   
     <main class="menNo ocultar">
         <header>
             <a href="index.html">
@@ -242,30 +230,38 @@
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
                 </svg>
             </a>
-            <h1>war</h1>
+            <h1>Challengue</h1>
         </header>
         <article>
-            <button class="two">Back</button>
+            <section class="information2">
+                <h1 id="edadHombre"></h1>
+                <h1 id="Numeronombre"></h1>
+            </section>
+            <footer>
+                <button class="two"></button>
+            </footer>
+           
             
         </article>
         
     </main>
-    <main class="womanNo ocultar">
+    <main class="Woman ocultar">
         <header>
             <a href="index.html">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
                 </svg>
             </a>
-            <h1>war</h1>
+            <h1>Challengue</h1>
         </header>
         <article>
-            <section>
-                <h1 id="edadwomanNo"></h1>
+            <section class="information3">
+                <h1 id="edadMujer"></h1>
+                <h1 id="nameW"></h1>
             </section>
             
             <footer>
-                <button class="three">Back</button>
+                <button class="three"></button>
             </footer>
             
             
@@ -279,84 +275,115 @@
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
                 </svg>
             </a>
-            <h1>war</h1>
+            <h1>Challengue</h1>
         </header>
         <article class="fondo">
             <header class="gender">
                 <button class="men">
-                    <section class="checkHG ocultar"></section   ction>
-                    <section class="checkHB"></section>
+                    <section class="checkHG ocultar"></section>
+                    
                 </button>
                 <button class="woman">
                     <section class="checkMG ocultar"></section>
-                    <section class="checkMB"></section>
+                    
                 </button>
             </header>
             <form class="information">
-                <input type="text" class="name" placeholder="ingrese el nombre">
-                <input type="date" id="birhtdate">
+                <input type="text" class="name" required id="nameperson" placeholder="nombre">
+                <input type="date" id="fechaNacimiento">
             </form>
             <footer>
-                    <button class="validate">Validate</button>
+                    <button class="validate"> validate </button>
             </footer>
         </article>
     </main>
     <script>
-        // constantes de fecha
-        const birhtdate = document.getElementById("birhtdate");
-        const edadmenGo = document.getElementById("edadmenGo");
-        const edadwomanNo = document.getElementById("edadwomanNo");
-        // Constantes
-        const main1 = document.querySelector('main.menGo')
+    
+        var edadfinal=0
+        var nombreFinal=0
+        const fechaNacimiento = document.getElementById("fechaNacimiento");
+        const edadhombre = document.getElementById("edadhombre");
+        const edadMujer = document.getElementById("edadMujer");
+        const edadHombre = document.getElementById("edadHombre");
+        const nombre = document.querySelector('input.name')
+        var nameF = ''
+        const h1 = document.getElementById('nameGO')
+        const h2 = document.getElementById('Numeronombre')
+        const h3 = document.getElementById('nameW') 
+        const main1 = document.querySelector('main.Hombre')
         const main2 = document.querySelector('main.menNo')
-        const main3 = document.querySelector('main.womanNo')
+        const main3 = document.querySelector('main.Woman')
         const man = document.querySelector('button.men')
         const woman = document.querySelector('button.woman')
         const form = document.querySelector('main.form')
         const valid = document.querySelector('button.validate')
         const backHGO = document.querySelector('button.one')
         const backMNGO = document.querySelector('button.three')
-        const checkHB = document.querySelector('section.checkHB')
+        const backHNO = document.querySelector('button.two')
+        const nameperson = document.getElementById('nameperson') 
         const checkHG = document.querySelector('section.checkHG')
-        const checkMB = document.querySelector('section.checkMB')
         const checkMG = document.querySelector('section.checkMG')
-     
-           
-
-          
-            // woman
-            const calcularEdadWN = (fechaNacimiento) => {
+        const calculoedad = (fechaNacimiento) => {
                 const fechaActual = new Date();
                 const anoActual = parseInt(fechaActual.getFullYear());
                 const mesActual = parseInt(fechaActual.getMonth()) + 1;
                 const diaActual = parseInt(fechaActual.getDate());
-                
-                // 2016-07-11
+                // 
                 const anoNacimiento = parseInt(String(fechaNacimiento).substring(0, 4));
                 const mesNacimiento = parseInt(String(fechaNacimiento).substring(5, 7));
                 const diaNacimiento = parseInt(String(fechaNacimiento).substring(8, 10));
                 
-                let edadwomanNo = anoActual - anoNacimiento;
+                let edadhombre = anoActual - anoNacimiento;
                 if (mesActual < mesNacimiento) {
-                    edadwomanNo--;
+                    edadhombre--;
                 } else if (mesActual === mesNacimiento) {
                     if (diaActual < diaNacimiento) {
-                        edadwomanNo--;
+                        edadhombre--;
                     }
                 }
-                return edadwomanNo;
+                edadfinal=edadhombre
+                return edadhombre;
+                console.log(edadhombre)
             };
-           
-        man.onclick = () =>{
-            // agregar
-            checkHB.classList.add('ocultar'),
+            window.addEventListener('load', function () {
+
+                fechaNacimiento.addEventListener('change', function () {
+                    if (this.value) {
+                        edadhombre.innerText = `Age: ${calculoedad(this.value)} years`;
+                        edadHombre.innerText = `Age: ${calculoedad(this.value)} years`;
+                        edadMujer.innerText=`Age: ${calculoedad(this.value)} years`;
+                        
+                    }
+                });
+
+            });
+      
+        man.onclick = () =>{     
             checkHG.classList.remove('ocultar'),
             checkMG.classList.add('ocultar'),
-            checkMB.classList.remove('ocultar')
-            // actions
             valid.onclick = () =>{
-            form.classList.add('ocultar')
-            main1.classList.remove('ocultar')
+                form.classList.add('ocultar')
+                main1.classList.remove('ocultar')
+                nameF = nombre.value
+
+                h1.innerText= 'Name:'+nameF                                                           
+                 if(edadfinal<18){
+                    if(nameperson.value.length == 0){
+                    alert('Llene los campos')
+                    return
+                    }
+                    nameF = nombre.value
+                    h2.innerText= 'Name:'+nameF
+                    
+                    main1.classList.add('ocultar')
+                    main2.classList.remove('ocultar')
+
+                    backHNO.onclick = () =>{
+                        main2.classList.add('ocultar')
+                        form.classList.remove('ocultar')
+                    }
+                }
+                
             }
             backHGO.onclick = () =>{
             main1.classList.add('ocultar')
@@ -365,16 +392,19 @@
             
             
         }
-        woman.onclick = () =>{
-            // agregar
-            checkMB.classList.add('ocultar')
+        woman.onclick = () =>{                     
             checkMG.classList.remove('ocultar')
             checkHG.classList.add('ocultar')
-            checkHB.classList.remove('ocultar')
-            // actions
+                       
             valid.onclick = () =>{
-            form.classList.add('ocultar')
-            main3.classList.remove('ocultar')
+                if(nameperson.value.length == 0){
+                    alert('Llene los campos')
+                    return
+                }
+                form.classList.add('ocultar')
+                main3.classList.remove('ocultar')
+                nameF = nombre.value
+                h3.innerText= 'Name:'+nameF                
             }
             backMNGO.onclick = () =>{
                 main3.classList.add('ocultar')
