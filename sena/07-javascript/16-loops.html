@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta 
+    name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        section{
+            overflow-y: auto;
+            height: 560px;
+        }
+        p{
+            text-align: center;
+        }
+        ul{ 
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            gap: 2px;
+        }
+        ul li {
+            background-color: #aa0;
+            color: #333;
+            height: 20px;
+            padding: 8px;
+            
+
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.htm">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+            </a>
+            <h1>loops</h1>
+        </header>
+        <section>
+            <h2>loop (for)</h2>
+            <p>print even numbers from 0 to 10 </p>
+            <ul class="evenValues"></ul>
+            //
+            <h2>loop (forin)</h2>
+            <p>print objects properties</p>
+            <ul class="propsValues"></ul>
+            //
+            <h2>loop (while)</h2>
+            <p>print multiples  of 5 from 0 to 25</p>
+            <ul class="multValues"></ul>
+
+            <h2>loop (do while)</h2>
+            <p>print factorial (N!) of 5 </p>
+            <ul class="factValues"></ul>
+
+            <h2>(break)</h2>
+            <p>fibonacci (10 = 89) </p>
+            <ul class="fibValues"></ul>
+            
+  
+         
+
+        </section>
+        <nav id="menu">
+            
+    </main>
+    <script>
+        //elements
+        const evals = document.querySelector(".evenValues")
+        const props = document.querySelector(".propsValues")
+        const mults = document.querySelector(".multValues")
+        const valu  = document.querySelector(".factValues")
+        const fibs  = document.querySelector(".fibValues")
+  
+        const series = {
+            title: "halo",
+            year: 2022,
+            season: 1,
+            caps:10
+            
+        }
+        //loops (for)
+        for (let i = 0; i <= 10; i++) {
+            if (i%2 == 0)
+            evals.innerHTML += "<li> " + i + " </li>" ;
+            
+        }
+        //loop (forin)
+        for (serie in series) {
+           props.innerHTML += "<li>" + serie + ":" +series[serie] + "</li>"
+        }
+        let i= 0
+        while (i <=25){
+            if (i%5 == 0){
+                mults.innerHTML += "<li> " + i + " </li>" ;
+            }
+           i++
+        }
+        // loop (do while)
+      
+
+        let index = 1
+        let nfac = 5
+        let fact = 1
+        let nums = 5
+        do{
+            fact *= index         
+            if (index < nfac) {
+                nums +=  " x " + (nfac-index) 
+          
+        }
+            if (index == nfac) {
+                valu.innerHTML += "<li> " + nums + "=" + fact + "</li>"
+            }
+            index++
+        }while(index <= nfac)
+     
+
+
+        let act = 1
+        let prev = 0
+        let sum = 0
+        for (let i = 0; i <= 20; i++){
+            sum = act + prev
+            prev = act
+            act = sum 
+            fibs.innerHTML += "<li>" + sum + "</li>"
+            if (i == 10) {
+                break
+            }
+        }
+    </script>
+    
+</body>
+</html>
