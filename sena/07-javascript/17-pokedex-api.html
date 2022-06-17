@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
     <link rel="stylesheet" href="css/styles.css">
     <style>
 
@@ -57,10 +57,7 @@
             left: 4px;
             top: 158px;
         }
-        figure.pokedex button.btn-enter:disabled {
-            cursor: not-allowed !important;
-            filter: grayscale(1);
-        }
+             
         figure.pokedex button.btn-enter {
             background: url(images/enter.png) no-repeat center;
             border: none;
@@ -72,6 +69,7 @@
             transition: transform 0.2s ease-in;
             width: 360px;
         }
+        
         figure.pokedex button.btn-enter:hover {
             cursor: pointer;
             transform: scale(1.03);
@@ -96,6 +94,11 @@
         figure.pokedex button.btn-dark {
             background: url(images/Vector.png) no-repeat center;
         }
+        /* figure.pokedex section{
+            background: url(images/enter.png)no-repeat center;
+            width: 200px;
+            height: 500px;
+        } */
         figure.pokedex section#pokemons-container {
             display: flex;
             height: 504px;
@@ -107,7 +110,7 @@
             position: absolute;
             top: 140px;
             padding: 0;
-            width: 400px;
+            width: 500px;
         }
         figure.pokedex section#pokemons-container div.card {
             border-radius: 20px;
@@ -181,6 +184,7 @@
         }
         figure.pokedex section#pokemons-container div.card figure img {
             width: 90px;
+            
         }
         /* Colors Type */
         figure.pokedex section#pokemons-container div.card.grass,
@@ -248,7 +252,7 @@
             background-color: #f194e8;
         }
 
-      
+   
         figure.pokedex.stage03 h1 {
             color: #2b3151;
             font-family: Montserrat;
@@ -301,18 +305,19 @@
             width: 80px;
         }
         figure.pokedex.stage03 figure {
-            position: absolute;
-            top: 220px;
+            position: absolute;       
             left: 50%;
             transform: translateX(-50%);
             padding: 0;
             margin: 0;
+            top: 200px;
         }
         figure.pokedex.stage03 figure img {
             width: 200px;
+           
         }
         figure.pokedex.stage03 h5 {
-            background: transparent url(imgs/pokedex/bg-stats.svg) no-repeat left bottom;
+        
             border-bottom: 1px solid #2b3151;
             color: #2b3151;
             font-family: Montserrat;
@@ -328,6 +333,7 @@
             width: 360px;
         }
         figure.pokedex.stage03 table {
+           
             position: absolute;
             left: 20px;
             top: 480px;
@@ -444,7 +450,7 @@
 
         // Functions
         async function allPokemons() {
-            for (let i = 1; i <= 151; i++) {
+            for (let i = 1; i <= 898; i++) {
                 const res     = await fetch('https://pokeapi.co/api/v2/pokemon/'+i);
                 const pokemon = await res.json();
                 renderAllPokemon(pokemon); 
